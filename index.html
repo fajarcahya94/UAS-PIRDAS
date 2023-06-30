@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sensor Kebocoran Gas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .table-container {
+        width: 550px;
+        max-height: 560px;
+        overflow-y: auto;
+        padding-right: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .chart-container {
+        width: 550px;
+        height: 400px;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black text-[#f0f1f1] py-10">
+    <div class="flex flex-col items-center">
+      <h1 class="text-4xl font-bold text-center">Sensor Value</h1>
+      <button class="rounded-full bg-white text-black p-3 my-5 font-bold" onclick="deleteData()">Hapus Semua Data</button>
+      <div class="flex-container">
+        <div class="table-container">
+          <table class="w-full">
+            <thead class="rounded-[20px] sticky top-0 index-1">
+              <tr class="bg-black font-bold">
+                <td class="p-[15px] rounded-l-lg">
+                  <p class="text-center">NILAI</p>
+                </td>
+                <td class="p-[15px] rounded-l-lg">
+                  <p class="text-center">STATUS</p>
+                </td>
+              </tr>
+            </thead>
+            <tbody id="data-body"></tbody>
+          </table>
+        </div>
+        <div class="chart-container text-white">
+          <canvas id="chart" width="550" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
